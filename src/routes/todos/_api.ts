@@ -13,7 +13,16 @@ import type { Request } from '@sveltejs/kit';
 
 const base = 'https://api.svelte.dev';
 
-export async function api(request: Request, resource: string, data?: {}) {
+interface apiResponse {
+  status: number,
+  headers?: {
+    'content-type'?: string | undefined,
+    'location'?: string | undefined,
+  },
+  body?: string,
+}
+
+export async function api(request: Request, resource: string, data?: Record<string, unknown>) : Promise<apiResponse>{
 	// user must have a cookie set
 	if (!request.context.userid) {
 		return { status: 401 };
