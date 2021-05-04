@@ -1,10 +1,18 @@
 <script>
-    export let count = 21;
+  export let list = [1,2,3];
+
+  import Card from '$lib/Card.svelte';
+  import Counter from '$lib/Counter/index.svelte';
 </script>
 
-# This is an example of an mdsvex component.
+# Todos
 
-You can `import` it as `$lib/Example.svx`.
-Just **delete** this file if you don't care.
+<Card>
 
-*By the way, the count is {count}.*
+> # rabbit
+> 김태희는 아직 배고프다
+
+</Card>
+
+- [ ] This is an incomplete item
+- [x] This is an incomplete item

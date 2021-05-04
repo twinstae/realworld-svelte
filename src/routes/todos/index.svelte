@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
-	import { enhance } from '$lib/form';
+  import { enhance } from '$lib/form';
+  import Example from '$lib/Example.svx';
 	import type { Load } from '@sveltejs/kit';
 
   async function fetchTodoList({ fetch }){
@@ -56,6 +57,8 @@
 <svelte:head>
 	<title>Todos</title>
 </svelte:head>
+
+<Example />
 
 <div class="todos">
 	<h1>Todos</h1>
